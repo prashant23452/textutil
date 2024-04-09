@@ -16,6 +16,19 @@ export default function Textform(props) {
         // console.log("On Change");
         setText(event.target.value);
     }
+    const handleClear =() =>{
+        setText('');
+    }
+    const handleExtraSpace =() =>{
+        let newText= text.split(/[ ]+/);
+        setText(newText.join(" "));
+    }
+    const handleCopy =() =>{
+        let tex=document.getElementById("myBox");
+        tex.select();
+        navigator.clipboard.writeText(tex.value);
+
+    }
     const [text, setText] = useState('');
     // text ="new Text";//Wrong Way to use
    // setText ("new Text");//Correct  Way to use
@@ -26,8 +39,11 @@ export default function Textform(props) {
     <div className="mb-3">
         <textarea className="form-control" value={text} onChange={handleOnChange} id="myBox" rows="8"></textarea>
     </div>
-    <button className="btn btn-primary mx-3" onClick={handleUpclick}>Convert to Upper Case</button>
-    <button className="btn btn-primary mx-3" onClick={handleloclick}>Convert to Lower Case</button>
+    <button className="btn btn-primary mx-1" onClick={handleUpclick}>Convert to Upper Case</button>
+    <button className="btn btn-primary mx-1" onClick={handleloclick}>Convert to Lower Case</button>
+    <button className="btn btn-primary mx-1" onClick={handleClear}>Clear</button>
+    <button className="btn btn-primary mx-1" onClick={handleCopy}>Copy Text</button>
+    <button className="btn btn-primary mx-1" onClick={handleExtraSpace}>Remove Extra space</button>
     </div>
     <div className="container my-3">
         <h2>Your text Summary</h2>
