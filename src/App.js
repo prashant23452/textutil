@@ -22,11 +22,19 @@ function App() {
       setMode('dark')
       document.body.style.backgroundColor= '#042743';
       showAlert("Dark mode has been enabled ","sucess");
+      document.title=" TextUtils- Dark Mode ";
+      // setInterval(() =>{
+      //   document.title=" TextUtils is Amazing ";
+      // },2000)
+      // setInterval(() =>{
+      //   document.title=" Install TextUtils Now ";
+      // },1500)
     }
     else{
       setMode('light')
       document.body.style.backgroundColor= 'white';
       showAlert("light mode has been enabled ","sucess");
+      document.title=" TextUtils- Light Mode ";
     }
   }
   return (
