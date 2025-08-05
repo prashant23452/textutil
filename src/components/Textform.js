@@ -3,19 +3,19 @@ import React,{useState} from 'react'
 
 export default function Textform(props) {
     const handleUpclick= ()=>{
-        //console.log("Uppercase was clicked" +text);
+        
         let newText= text.toUpperCase();
         setText(newText);
         props.showAlert("Converted to upper case", "success")
     }
     const handleloclick= ()=>{
-        //console.log("Uppercase was clicked" +text);
+        
         let newText= text.toLowerCase();
         setText(newText);
         props.showAlert("Converted to lower case", "success");
     }
     const handleOnChange= (event)=>{
-        // console.log("On Change");
+        
         setText(event.target.value);
     }    
     const handleClear =() =>{
@@ -37,8 +37,6 @@ export default function Textform(props) {
 
     }
     const [text, setText] = useState('');
-    // text ="new Text";//Wrong Way to use
-   // setText ("new Text");//Correct  Way to use
   return (
     <>
     <div style={{color:props.mode==='dark' ? 'white' :'#042743'}}className="container">
